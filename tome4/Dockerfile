@@ -12,6 +12,7 @@ RUN apt update && apt install -y \
     libasound2 \
  && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -s /bin/bash user
-
-RUN mkdir -p /usr/share/desktop-directories /usr/share/applications
+RUN useradd -s /bin/bash user \
+ && groupadd dri -g 991 \
+ && gpasswd -a user dri \
+ && mkdir -p /usr/share/desktop-directories /usr/share/applications
