@@ -10,6 +10,7 @@ RUN apt update && apt install -y \
     libglib2.0-0 \
     libgtk2.0-0 \
     libasound2 \
+    pulseaudio \
  && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -s /bin/bash user \
